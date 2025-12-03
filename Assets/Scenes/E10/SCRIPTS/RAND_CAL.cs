@@ -12,7 +12,7 @@ public class RAND_CAL : MonoBehaviour
         num1 = Random.value;
         num2 = Random.value;
 
-
+        Debug.Log(CALCULO);
         Debug.Log(num1);
         Debug.Log(num2);
 

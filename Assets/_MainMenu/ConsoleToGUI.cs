@@ -18,7 +18,6 @@ public class ConsoleToGUI : MonoBehaviour
             sb.AppendLine(log[i].time.ToString("HH:mm:ss:fff") + " - " + log[i].type + ": " + log[i].log);
         }
         return sb.ToString();
-        Gamepad.current.leftStick.ReadValue();
     }
     public bool open = false;
     private void Awake()

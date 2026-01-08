@@ -1,8 +1,10 @@
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.UIElements;
 
-public class Diag_Movement : MonoBehaviour
+public class FOLLOWER : MonoBehaviour
 {
-    private Vector3 Dir = new Vector3(1, -1, 1);
+    public GameObject Followed;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -13,6 +15,6 @@ public class Diag_Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += Dir;
+        transform.position = Followed.transform.position;
     }
 }

@@ -1,10 +1,9 @@
+using System;
 using UnityEngine;
 
-public class RANDOM_NUM: MonoBehaviour
+public class RandomSpawn_Frefall : MonoBehaviour
 {
-
-    public float Max;
-    public float Min;   
+    private float PosX;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -15,6 +14,8 @@ public class RANDOM_NUM: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(Random.Range(Min, Max));
+        PosX = UnityEngine.Random.Range(-4, -5);
+        
+
     }
 }

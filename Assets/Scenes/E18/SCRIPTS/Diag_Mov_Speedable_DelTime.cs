@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Diag_Mov_Speedable_DelTime : MonoBehaviour
 {
@@ -14,6 +15,9 @@ public class Diag_Mov_Speedable_DelTime : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += Dir * SPEED * Time.deltaTime;
+        Vector3 dir = new Vector3(1, 1, 0);
+
+        transform.position += dir * SPEED * Time.deltaTime;
+
     }
 }

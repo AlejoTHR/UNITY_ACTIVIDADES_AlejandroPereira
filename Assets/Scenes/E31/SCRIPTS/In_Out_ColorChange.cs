@@ -1,16 +1,16 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Move_in_out : MonoBehaviour
+public class In_Out_ColorChange : MonoBehaviour
 {
-    public int SPEED;
-    private BoxCollider2D bc;
-    private Rigidbody2D rb;
+    public int SPEED = 0;
+
+    SpriteRenderer color;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
- 
+        color = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -32,15 +32,15 @@ public class Move_in_out : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Entered");
+        color.color = Color.red;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        Debug.Log("Exited");
+        color.color = Color.white;
     }
 
+
+
+
 }
-
-
-

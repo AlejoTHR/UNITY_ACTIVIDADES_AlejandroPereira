@@ -1,16 +1,14 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Move_in_out : MonoBehaviour
+public class In_Out_Type : MonoBehaviour
 {
-    public int SPEED;
-    private BoxCollider2D bc;
-    private Rigidbody2D rb;
+    public int SPEED = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
- 
+
     }
 
     // Update is called once per frame
@@ -32,15 +30,15 @@ public class Move_in_out : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Entered");
+        Debug.Log("Colisionó con:" + collision.tag);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        Debug.Log("Exited");
+        Debug.Log("Dejó de colisionar con:" + collision.tag);
     }
 
+
+
+
 }
-
-
-

@@ -23,11 +23,4 @@ public class CALCULATOR : MonoBehaviour
         if (CALCULO == '%') Debug.Log(num1 % num2);
 
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-
-    }
 }

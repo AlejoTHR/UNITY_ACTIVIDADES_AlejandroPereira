@@ -18,7 +18,7 @@ public class CameraFollows : MonoBehaviour
     {
         float followingSpeed = SPEED * Time.deltaTime;
 
-        Vector3 TARGET = new Vector3 (target.transform.position.x -0.5f, target.transform.position.y, target.transform.position.z);
+        Vector3 TARGET = new Vector3 (target.transform.position.x, target.transform.position.y, -1);
         
         transform.position = Vector3.MoveTowards (transform.position, TARGET, followingSpeed);  
 

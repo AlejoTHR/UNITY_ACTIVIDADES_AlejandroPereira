@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class NewMonoBehaviourScript : MonoBehaviour
+public class Sum_2Nums : MonoBehaviour
 {
 
     public int Num1;
@@ -10,11 +10,5 @@ public class NewMonoBehaviourScript : MonoBehaviour
     void Start()
     {
         Debug.Log(Num1 + Num2);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

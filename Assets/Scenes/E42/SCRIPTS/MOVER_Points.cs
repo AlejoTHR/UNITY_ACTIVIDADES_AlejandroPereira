@@ -1,7 +1,6 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
 
 public class MOVER_Point : MonoBehaviour
 {
@@ -15,13 +14,14 @@ public class MOVER_Point : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        CanvasTEXT = GetComponent<GameObject>();
 
     }
 
     // Update is called once per frame
     void Update()
     {
+
+
         Vector3 dir = new Vector3(0, 0, 0);
 
         if (Keyboard.current.wKey.IsPressed()) dir.y = 1;

@@ -1,15 +1,17 @@
+using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Move_in_out : MonoBehaviour
+public class MOVE_Destroyer : MonoBehaviour
 {
-    public int SPEED;
+    public int SPEED = 0;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
- 
+        
     }
 
     // Update is called once per frame
@@ -26,20 +28,15 @@ public class Move_in_out : MonoBehaviour
         if (Keyboard.current.aKey.IsPressed()) dir.x = -1;
 
         transform.position += dir * SPEED * Time.deltaTime;
-
-
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Entered");
+        Destroy(collision.gameObject);
+
+
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        Debug.Log("Exited");
-    }
 
 }
-
-
 

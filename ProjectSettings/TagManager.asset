@@ -4,8 +4,7 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - Diamond
-  - Capsule
+  - Square
   layers:
   - Default
   - TransparentFX

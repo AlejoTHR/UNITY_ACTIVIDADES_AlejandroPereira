@@ -3,7 +3,7 @@ using UnityEngine;
 public class CALCULATOR : MonoBehaviour
 {
 
-    private int CALCULO;
+    private char CALCULO;
     public float num1;
     public float num2;
     // Start is called once before the first execution of Update after the MonoBehaviour is created

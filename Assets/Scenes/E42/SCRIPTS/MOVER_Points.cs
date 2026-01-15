@@ -1,15 +1,22 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
 
-public class Move_in_out : MonoBehaviour
+public class MOVER_Point : MonoBehaviour
 {
-    public int SPEED;
+    public int SPEED = 0;
+    private int counter = 0;
+    public GameObject CanvasTEXT;
+
+
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
- 
+        CanvasTEXT = GetComponent<GameObject>();
+
     }
 
     // Update is called once per frame
@@ -26,20 +33,15 @@ public class Move_in_out : MonoBehaviour
         if (Keyboard.current.aKey.IsPressed()) dir.x = -1;
 
         transform.position += dir * SPEED * Time.deltaTime;
-
-
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Entered");
-    }
+        TMP_Text text = CanvasTEXT.GetComponent<TMP_Text>();
+        counter++;
+        text.text = counter.ToString();
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        Debug.Log("Exited");
+
     }
 
 }
-
-
-

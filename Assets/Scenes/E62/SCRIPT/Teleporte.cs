@@ -1,18 +1,18 @@
-using System.Drawing;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Destroy_Radius : MonoBehaviour
+public class Teleporte : MonoBehaviour
 {
     public int SPEED = 0;
-    private int detection = 3;
-    LayerMask LayerMask;
+
+    public Collider2D collided;
+
+    public GameObject tpObject;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
-        LayerMask = LayerMask.GetMask("square");
+        
     }
 
     // Update is called once per frame
@@ -29,16 +29,11 @@ public class Destroy_Radius : MonoBehaviour
         if (Keyboard.current.aKey.IsPressed()) dir.x = -1;
 
         transform.position += dir * SPEED * Time.deltaTime;
+    }
 
-
-
-        Collider2D ObjDetected = Physics2D.OverlapCircle(transform.position, detection);
-
-
-        Destroy(ObjDetected.gameObject);
-
-    }   
-
-
+    private void OnTriggerEnter2D(Collider2D collided)
+    {
+        transform.position = tpObject.transform.position;
+    }
 
 }

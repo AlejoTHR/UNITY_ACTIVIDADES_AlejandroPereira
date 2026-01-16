@@ -1,18 +1,19 @@
-using System.Drawing;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Destroy_Radius : MonoBehaviour
+public class Spawner_Count_Destroy : MonoBehaviour
 {
     public int SPEED = 0;
-    private int detection = 3;
-    LayerMask LayerMask;
+    public int counter = 0;
+    public GameObject prefab;
+    private GameObject despawn;
+    public TMP_Text counterText;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
-        LayerMask = LayerMask.GetMask("square");
+        
     }
 
     // Update is called once per frame
@@ -32,13 +33,29 @@ public class Destroy_Radius : MonoBehaviour
 
 
 
-        Collider2D ObjDetected = Physics2D.OverlapCircle(transform.position, detection);
+
+        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        {
+            despawn = Instantiate(prefab, transform.position, transform.rotation);
+            Destroy(despawn, 3f);
+
+            counter++;
+            counterText.text = counter.ToString();
+
+            Invoke("Despawn",3f);
+        }
 
 
-        Destroy(ObjDetected.gameObject);
 
-    }   
+    }
 
+    void Despawn()
+    {
+        counter--;
+        counterText.text = counter.ToString();
+    }
 
 
 }
+
+

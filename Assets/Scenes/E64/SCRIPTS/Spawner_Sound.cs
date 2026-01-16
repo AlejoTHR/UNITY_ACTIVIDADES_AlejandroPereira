@@ -1,18 +1,18 @@
-using System.Drawing;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Destroy_Radius : MonoBehaviour
+public class Spawner_Sound : MonoBehaviour
 {
     public int SPEED = 0;
-    private int detection = 3;
-    LayerMask LayerMask;
+    public GameObject prefab;
+    public AudioSource coin;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
-        LayerMask = LayerMask.GetMask("square");
+        
     }
 
     // Update is called once per frame
@@ -30,15 +30,21 @@ public class Destroy_Radius : MonoBehaviour
 
         transform.position += dir * SPEED * Time.deltaTime;
 
+        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        {
+            GameObject despawn = Instantiate(prefab, transform.position, transform.rotation);
+            Destroy(despawn, 2f);
+
+            coin.Play();
+        }
 
 
-        Collider2D ObjDetected = Physics2D.OverlapCircle(transform.position, detection);
 
 
-        Destroy(ObjDetected.gameObject);
 
-    }   
-
+    }
 
 
 }
+
+
